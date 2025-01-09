@@ -1,13 +1,14 @@
-const express = require('express'); 
-const app = express(); 
+const express = require('express');
+const app = express();
 const { Server } = require('socket.io');
 const http = require('http');
-const io = new Server(server); 
-const port = 5000;
+const server = http.createServer(app);
+const io = new Server(server);
+const port = 3000;
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
-}); 
+});
 
 io.on('connection', (socket) => {
     socket.on('send name', (username) => {
@@ -17,8 +18,8 @@ io.on('connection', (socket) => {
     socket.on('send message', (chat) => {
         io.emit('send message', (chat));
     });
-})
+});
 
 server.listen(port, () => {
-    console.log(`Server is listening on port: ${port}`);
+    console.log(`Server is listening at the port: ${port}`);
 });
