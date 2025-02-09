@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styling for the list area */
+        #listArea {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            overflow-y: auto;
+        }
+
+        /* List item styling */
+        .list-item {
+            background-color: #e9f5ff;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px 0;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1)
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="text-center mt-5">
+        <a href="/" class="text-blue-500 underline">Go to Chat Page</a>
+    </nav>
+    <h1 class="font-bold text-green-500 text-3xl text-center mt-5">Chat List</h1>
+    <div class="flex flex-col justify-center items-center mt-5">
+        <input type="text" id="newItem" placeholder="New item" class="border border-gray-400 rounded-md p-1 mb-2">
+        <button id="addItem" class="bg-blue-500 rounded-md p-2 text-white mb-2">Add Item</button>
+        <button id="removeItems" class="bg-red-500 rounded-md p-2 text-white mb-2">Remove Selected Items</button>
+    </div>
+    <div id="listArea" class="flex flex-col justify-center items-center mt-5">
+        <!-- List items will appear here -->
+    </div>
+    <script src="list.js"></script>
+</body>
+
+</html>
