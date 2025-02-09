@@ -1,3 +1,8 @@
+<!--
+    This code is based on examples from the Tailwind CSS documentation.
+    Tailwind CSS: https://tailwindcss.com/
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -28,13 +33,10 @@
 
         /* Name label styling */
         .name {
-            background-color: #4CAF50;
-            color: white;
+            background-color: grey;
             width: 100%;
             text-align: center;
-            padding: 5px;
-            border-radius: 5px;
-            margin-bottom: 5px;
+            color: white;
         }
 
         /* Input fields and button styling */
@@ -117,10 +119,7 @@
     // Display name when sent
     socket.on("send name", (username) => {
         let name = document.createElement("p");
-        name.style.backgroundColor = "grey";
-        name.style.width = "100%";
-        name.style.textAlign = "center";
-        name.style.color = "white";
+        name.classList.add("name");
         name.textContent = username + ":";
         messageArea.appendChild(name);
         scrollToBottom();
@@ -129,6 +128,7 @@
     // Display message when sent.
     socket.on("send message", (chat) => {
         let chatContent = document.createElement("p");
+        chatContent.classList.add("message");
         chatContent.textContent = chat;
         messageArea.appendChild(chatContent);
         scrollToBottom();

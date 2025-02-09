@@ -1,3 +1,9 @@
+/**
+ * This code is based on examples from the Express and Socket.IO documentation.
+ * Express: https://expressjs.com/
+ * Socket.IO: https://socket.io/
+ */
+
 const express = require('express');
 const app = express();
 const { Server } = require('socket.io');
@@ -6,7 +12,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 const port = 3000;
 
-// Server the HMTL file 
+// Serve the HTML file 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
